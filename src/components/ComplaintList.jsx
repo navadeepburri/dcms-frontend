@@ -1,7 +1,7 @@
 const getStatusColor   = s => ({ Resolved: "#27ae60", "In Progress": "#2980b9", Closed: "#7f8c8d", Rejected: "#c0392b" }[s] || "#e67e22");
 const getPriorityColor = p => ({ High: "#e74c3c", Medium: "#f39c12" }[p] || "#27ae60");
 
-const API_BASE = "http://localhost:8081/api";
+const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8081/api";
 
 function ComplaintList({ complaints }) {
   if (!complaints || complaints.length === 0) {

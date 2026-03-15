@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_BASE = "http://localhost:8081/api";
+const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8081/api";
 
 export default function RegisterPage({ onSwitch }) {
   const [form, setForm]       = useState({ username:"", email:"", password:"", role:"ROLE_USER" });

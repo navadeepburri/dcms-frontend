@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8081/api/complaints";
+const BASE_URL = (process.env.REACT_APP_API_URL || "http://localhost:8081/api") + "/complaints";
 
 // Get dashboard statistics
 export const getStats = () => {
