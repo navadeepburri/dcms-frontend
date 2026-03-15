@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_BASE = "process.env.REACT_APP_API_URL || "http://localhost:8081/api";
+const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:8081/api";
 
 const getAuthHeader = () => ({
   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -96,7 +96,6 @@ function ComplaintForm() {
         </div>
       )}
 
-      {/* Order dropdown */}
       <div style={{ marginBottom:"16px" }}>
         <label style={{ fontWeight:700, color:"#374151", fontSize:"14px", display:"block", marginBottom:"8px" }}>
           Select Order
@@ -121,7 +120,6 @@ function ComplaintForm() {
         )}
       </div>
 
-      {/* Selected order details card */}
       {selectedOrder && catStyle && (
         <div style={{ marginBottom:"16px", padding:"14px 16px", borderRadius:"12px", border:`1px solid ${catStyle.border}`, background:catStyle.bg }}>
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
@@ -145,7 +143,6 @@ function ComplaintForm() {
         </div>
       )}
 
-      {/* Description */}
       <div style={{ marginBottom:"16px" }}>
         <label style={{ fontWeight:700, color:"#374151", fontSize:"14px", display:"block", marginBottom:"8px" }}>
           Complaint Description
@@ -159,7 +156,6 @@ function ComplaintForm() {
         />
       </div>
 
-      {/* File upload */}
       <div style={{ marginBottom:"20px" }}>
         <label style={{ fontWeight:700, color:"#374151", fontSize:"14px", display:"block", marginBottom:"8px" }}>
           Attach Evidence (optional)
